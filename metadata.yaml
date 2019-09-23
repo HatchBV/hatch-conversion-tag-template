@@ -3,3 +3,5 @@ documentation: "https://github.com/HatchBV/hatch-conversion-tag-template/blob/ma
 versions:
   - sha: 0
     changeNotes: Initial Version
+  - sha: db73e7d665bf7dd35207ce31557f914c4b78f90b
+    changeNotes: URI Encoding; gtmOnSuccess at callback; added: readme, license, metadata.yaml; variables renamed; format of Hatch API changed 
