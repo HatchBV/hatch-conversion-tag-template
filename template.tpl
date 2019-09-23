@@ -1,8 +1,8 @@
 ___INFO___
 
 {
-  "displayName": "Hatch Pixel",
-  "description": "DataLayer format:\n  [\n     {\n       'hatch': {\n          'merchantId': 999111,\n          'transactionProducts': [\n            {'sku', 'name', 'brand', 'regularPrice', 'quantity'}\n          ]\n     }\n ]",
+  "displayName": "Hatch Conversion Tag",
+  "description": "This tag is created and owned by Hatch in order to track sales conversions on a retailer’s website. Check documentation: https://github.com/HatchBV/hatch-conversion-tag-template/blob/master/README.md",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -34,11 +34,12 @@ ___TEMPLATE_PARAMETERS___
     ],
     "displayName": "Merchant Hatch ID",
     "simpleValueType": true,
-    "name": "MerchantID",
+    "name": "merchantID",
     "valueUnit": "integer",
     "type": "TEXT"
   },
   {
+    "help": "Please use 3-letters format of currency, e.g. \"EUR\"",
     "valueValidators": [
       {
         "args": [
@@ -48,15 +49,15 @@ ___TEMPLATE_PARAMETERS___
         "type": "STRING_LENGTH"
       }
     ],
-    "displayName": "Merchant Currency (e.g. \"EUR\")",
+    "displayName": "Merchant Currency",
     "defaultValue": "EUR",
     "simpleValueType": true,
-    "name": "Currency",
+    "name": "currency",
     "type": "TEXT"
   },
   {
     "displayName": "Please use dataLayer format like in description",
-    "name": "DataLayer",
+    "name": "dataLayer",
     "type": "LABEL"
   }
 ]
@@ -128,15 +129,13 @@ const injectHiddenIframe = require('injectHiddenIframe');
 
 let dataLayer = copyFromDataLayer('hatch') || [];
 
-const merchantId = data.MerchantID;
-const cur = data.Currency;
+const merchantId = data.merchantID;
+const cur = data.currency;
 let concat = "";
 for(let i in dataLayer.transactionProducts){
-  concat += ";mpn=" + dataLayer.transactionProducts[i].sku + ";cur=" + cur + ";pr=" + dataLayer.transactionProducts[i].regularPrice + ";qty=" + dataLayer.transactionProducts[i].quantity + ";vendor_name=" + dataLayer.transactionProducts[i].brand + ";prod_name=" + dataLayer.transactionProducts[i].name;
+  concat += "&mpn=" + dataLayer.transactionProducts[i].sku + "&cur=" + cur + "&pr=" + dataLayer.transactionProducts[i].regularPrice + "&qty=" + dataLayer.transactionProducts[i].quantity + "&vendor_name=" + dataLayer.transactionProducts[i].brand + "&prod_name=" + dataLayer.transactionProducts[i].name;
 }
-const src = "direct" + concat;
-injectHiddenIframe("https://gethatch.com/iceleads_rest/merch/" + merchantId + "/" + encodeUri(src));
-data.gtmOnSuccess();
+injectHiddenIframe("https://gethatch.com/iceleads_rest/merch/" + encodeUri(merchantId) + "/track?" + encodeUri(concat), data.gtmOnSuccess);
 
 
 ___NOTES___
