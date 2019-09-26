@@ -4,4 +4,6 @@ versions:
   - sha: 0
     changeNotes: Initial Version
   - sha: db73e7d665bf7dd35207ce31557f914c4b78f90b
-    changeNotes: URI Encoding; gtmOnSuccess at callback; added: readme, license, metadata.yaml; variables renamed; format of Hatch API changed 
+    changeNotes: URI Encoding; gtmOnSuccess at callback; added: readme, license, metadata.yaml; variables renamed; format of Hatch API changed
+  - sha: 0a7af183f3b6a44f93e78f0d51b7ec8405867f3e
+    changeNotes: Add Terms of Service; Add Categories
