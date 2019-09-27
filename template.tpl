@@ -11,7 +11,7 @@ ___INFO___
 {
   "displayName": "Hatch Conversion Tag",
   "description": "This tag is created and owned by Hatch in order to track sales conversions on a retailer’s website. Check documentation: https://github.com/HatchBV/hatch-conversion-tag-template/blob/master/README.md",
-  "categories": ["ANALYTICS", "CONVERSION_TRACKING"],
+  "categories": ["ANALYTICS", "CONVERSIONS"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
