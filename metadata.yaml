@@ -7,3 +7,5 @@ versions:
     changeNotes: URI Encoding; gtmOnSuccess at callback; added: readme, license, metadata.yaml; variables renamed; format of Hatch API changed
   - sha: 0a7af183f3b6a44f93e78f0d51b7ec8405867f3e
     changeNotes: Add Terms of Service; Add Categories
+  - sha: 99932fda9ba5099940e308a67f752ae9282bec18
+    changeNotes: Add appendix; rename category; remove trailing commas in metadata
