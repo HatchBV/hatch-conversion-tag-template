@@ -1,11 +1,11 @@
 homepage: "https://gethatch.com"
 documentation: "https://github.com/HatchBV/hatch-conversion-tag-template/blob/master/README.md"
 versions:
-  - sha: 99932fda9ba5099940e308a67f752ae9282bec18
-    changeNotes: Add appendix; rename category; remove trailing commas in metadata
-  - sha: 0a7af183f3b6a44f93e78f0d51b7ec8405867f3e
-    changeNotes: Add Terms of Service; Add Categories
-  - sha: db73e7d665bf7dd35207ce31557f914c4b78f90b
-    changeNotes: URI Encoding; gtmOnSuccess at callback; added: readme, license, metadata.yaml; variables renamed; format of Hatch API changed
-  - sha: 0
-    changeNotes: Initial Version
+  - changeNotes: "Add appendix; rename category; remove trailing commas in metadata"
+    sha: 99932fda9ba5099940e308a67f752ae9282bec18
+  - changeNotes: "Add Terms of Service; Add Categories"
+    sha: 0a7af183f3b6a44f93e78f0d51b7ec8405867f3e
+  - changeNotes: "URI Encoding; gtmOnSuccess at callback; added readme, license, metadata.yaml; variables renamed; format of Hatch API changed"
+    sha: db73e7d665bf7dd35207ce31557f914c4b78f90b
+  - changeNotes: "Initial Version"
+    sha: 0
