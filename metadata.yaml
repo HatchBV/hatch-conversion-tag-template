@@ -1,6 +1,8 @@
 homepage: "https://gethatch.com"
 documentation: "https://github.com/HatchBV/hatch-conversion-tag-template/blob/master/README.md"
 versions:
+  - changeNotes: "Add mpn, ean; replace sku with proprietary_id"
+    sha: 529ad3a8e5ab200e491db98ae78fe402d891e122
   - changeNotes: "Add appendix; rename category; remove trailing commas in metadata"
     sha: 99932fda9ba5099940e308a67f752ae9282bec18
   - changeNotes: "Add Terms of Service; Add Categories"
