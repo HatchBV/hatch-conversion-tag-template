@@ -142,19 +142,14 @@ const merchantId = data.merchantID;
 const cur = data.currency;
 let concat = "";
 for(let i in dataLayer.transactionProducts){
-  concat += "&mpn=" + dataLayer.transactionProducts[i].sku + "&cur=" + cur + "&pr=" + dataLayer.transactionProducts[i].regularPrice + "&qty=" + dataLayer.transactionProducts[i].quantity + "&vendor_name=" + dataLayer.transactionProducts[i].brand + "&prod_name=" + dataLayer.transactionProducts[i].name;
+  concat +=
+    "&mpn=" + (dataLayer.transactionProducts[i].mpn || '') +
+    "&ean=" + (dataLayer.transactionProducts[i].ean || '') +
+    "&proprietary_id=" + (dataLayer.transactionProducts[i].sku || '') +
+    "&cur=" + cur +
+    "&pr=" + (dataLayer.transactionProducts[i].regularPrice || '') +
+    "&qty=" + (dataLayer.transactionProducts[i].quantity || '') +
+    "&vendor_name=" + (dataLayer.transactionProducts[i].brand || '') +
+    "&prod_name=" + (dataLayer.transactionProducts[i].name || '');
 }
 injectHiddenIframe("https://gethatch.com/iceleads_rest/merch/" + encodeUri(merchantId) + "/track?" + encodeUri(concat), data.gtmOnSuccess);
-
-
-___NOTES___
-
-DataLayer format:
-     {
-       'hatch': {
-          'merchantId': 999111,
-          'transactionProducts': [
-            {'sku', 'name', 'brand', 'regularPrice', 'quantity'}
-          ]
-     }
-}

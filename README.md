@@ -13,6 +13,8 @@ Format of dataLayer variable for Hatch Conversion Tag:
       'merchantId': <merchantId>,
       'transactionProducts': [
         {
+          'mpn': <productMpn>,
+          'ean': <productEan>,
           'sku': <productSku>,
           'name': <productName>,
           'brand': <brandName>,
